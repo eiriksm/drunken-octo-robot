@@ -1,0 +1,16 @@
+PREFIX ont: <http://dbpedia.org/ontology/>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX xsd:    <http://www.w3.org/2001/XMLSchema#>
+SELECT * WHERE {
+  ?person ont:deathDate ?date;
+    foaf:name ?name;
+    <http://dbpedia.org/ontology/abstract> ?abstract;
+    foaf:isPrimaryTopicOf ?wiki .
+  FILTER(
+    ( lang(?abstract) = 'en' ) &&
+    ( ( datatype(?date) = xsd:date ) || ( datatype(?date) = xsd:dateTime ) ) &&
+    ( ?date >= "1980-REPLACEDATE"^^xsd:dateTime ) &&
+    ( regex(str(?date), "[0-9]{4}-REPLACEDATE") )
+  )
+}
+LIMIT 100

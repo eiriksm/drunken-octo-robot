@@ -1,0 +1,5 @@
+default:
+  hipchat_auth: ""
+  screen_name: "Beer alert"
+  # Message should include the %s token for the time.
+  message: "It's %s === drink beer and don't answer customer calls o'clock"
