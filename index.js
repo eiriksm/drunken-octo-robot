@@ -1,4 +1,3 @@
-var moment = require('moment');
 var beer_modules = require('./beer_modules');
 
 var getModule = function() {
