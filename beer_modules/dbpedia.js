@@ -38,6 +38,10 @@ var doRequest = function(callback) {
     }
     try {
       var wikis = JSON.parse(body);
+      // If we have no sign of interesting data. Throw error.
+      if (!wikis || !wikis.results || !wikis.results.bindings || !wikis.results.bindings[0]) {
+        throw new Error('No results found');
+      }
       var random = Math.floor(Math.random() * wikis.results.bindings.length);
       var wiki = wikis.results.bindings[random];
       var year = wiki.date.value.replace('-' + month + '-' + day, '');
