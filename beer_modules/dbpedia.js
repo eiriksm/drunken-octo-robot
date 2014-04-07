@@ -30,7 +30,7 @@ var doRequest = function(callback) {
   var query = encodeURIComponent(fs.readFileSync(file).toString());
   // Magic keyword: REPLACEDATE
   query = query.replace(/REPLACEDATE/g, month + '-' + day);
-  var url = 'http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=' + query + '&format=json&timeout=30000'
+  var url = 'http://dbpedia.org/sparql?default-graph-uri=http%3A%2F%2Fdbpedia.org&query=' + query + '&format=json&timeout=30000';
   request.get(url, function(err, res, body) {
     if (err) {
       callback(err);
@@ -63,6 +63,6 @@ var doRequest = function(callback) {
       callback(error);
     }
   });
-}
+};
 
 module.exports = doRequest;
