@@ -16,12 +16,12 @@
     "url": "https://github.com/eiriksm/drunken-octo-robot/issues"
   },
   "dependencies": {
-    "moment": "~2.8.3",
-    "request": "~2.44.0"
+    "moment": "~2.9.0",
+    "request": "~2.53.0"
   },
   "devDependencies": {
-    "should": "~4.0.4",
-    "jshint": "~2.5.5",
-    "mocha": "~1.21.4"
+    "should": "~5.2.0",
+    "jshint": "~2.6.3",
+    "mocha": "~2.2.1"
   }
 }
